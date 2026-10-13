@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style>
+    .fill-none { fill: none; }
+        .fill-current { fill: currentColor; }
+        .fill-paper { fill: var(--paper, #fbfaf7); }
+        .fill-surface { fill: var(--surface, #ffffff); }
+        .fill-ink { fill: var(--ink, #292631); }
+        .fill-brand { fill: var(--brand, #6b4cda); }
+        .fill-brand\/12 { fill: color-mix(in srgb, var(--brand, #6b4cda) 12%, transparent); }
+        .fill-brand\/35 { fill: color-mix(in srgb, var(--brand, #6b4cda) 35%, transparent); }
+        .fill-lavender { fill: var(--lavender, #eee9fa); }
+        .fill-mint { fill: var(--mint, #ecf1e9); }
+        .fill-sage { fill: var(--sage, #467361); }
+        .stroke-current { stroke: currentColor; }
+        .stroke-line { stroke: var(--line, rgb(54 42 76 / 14%)); }
+        .stroke-ink { stroke: var(--ink, #292631); }
+        .stroke-brand { stroke: var(--brand, #6b4cda); }
+        .stroke-brand\/20 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 20%, transparent); }
+        .stroke-brand\/25 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 25%, transparent); }
+        .stroke-brand\/30 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 30%, transparent); }
+        .stroke-brand\/35 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 35%, transparent); }
+        .stroke-brand\/40 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 40%, transparent); }
+        .stroke-brand\/45 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 45%, transparent); }
+        .stroke-brand\/50 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 50%, transparent); }
+        .stroke-brand\/60 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 60%, transparent); }
+        .stroke-brand\/65 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 65%, transparent); }
+        .stroke-brand\/70 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 70%, transparent); }
+        .stroke-draft { stroke: var(--draft, #b4a5d3); }
+        .stroke-draft\/50 { stroke: color-mix(in srgb, var(--draft, #b4a5d3) 50%, transparent); }
+        .stroke-sage { stroke: var(--sage, #467361); }
+        .stroke-sage\/35 { stroke: color-mix(in srgb, var(--sage, #467361) 35%, transparent); }
+        .text-ink { color: var(--ink, #292631); }
+        .text-\[\#505b93\] { color: var(--native-purple, #505b93); }
+        .text-\[\#00aaa6\] { color: var(--native-teal, #00aaa6); }
+        .font-mono { font-family: "IBM Plex Mono", monospace; }
+  </style>
+  <symbol id="asset" viewBox="0 0 24 24">
+<path d="m7.4916 10.835 2.3748-6.5114a3.1497 3.1497 0 0 0-.065-2.3418C9.0315.183 6.9427-.398 5.2928.265 3.643.929 2.71 2.4348 3.512 4.3046l2.8197 6.5615c.219.509.97.489 1.16-.03m1.6798 1.0969 6.5334-2.7758c2.1699-.9219 2.7218-3.6907 1.022-5.2905l-.068-.063c-1.6669-1.5469-4.4217-1.002-5.3706 1.0359L8.3566 11.135c-.234.503.295 1.0199.8159.7979m.373.87 6.6454-2.5119c2.2078-.8349 4.6206.745 4.5886 3.0398l-.002.09c-.048 2.2358-2.3938 3.7376-4.5536 2.9467l-6.6724-2.4418a.595.595 0 0 1-.006-1.1229m-.386 1.9269 6.4375 2.9767a3.2997 3.2997 0 0 1 1.6658 1.6989c.769 1.7998-.283 3.6396-1.9328 4.3016-1.6499.662-3.4097.235-4.2097-1.6359l-2.8027-6.5694c-.217-.509.328-1.009.8419-.772"/>
+  </symbol>
+  <use href="#asset"/>
+</svg>

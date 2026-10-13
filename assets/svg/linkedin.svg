@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style>
+    .fill-none { fill: none; }
+        .fill-current { fill: currentColor; }
+        .fill-paper { fill: var(--paper, #fbfaf7); }
+        .fill-surface { fill: var(--surface, #ffffff); }
+        .fill-ink { fill: var(--ink, #292631); }
+        .fill-brand { fill: var(--brand, #6b4cda); }
+        .fill-brand\/12 { fill: color-mix(in srgb, var(--brand, #6b4cda) 12%, transparent); }
+        .fill-brand\/35 { fill: color-mix(in srgb, var(--brand, #6b4cda) 35%, transparent); }
+        .fill-lavender { fill: var(--lavender, #eee9fa); }
+        .fill-mint { fill: var(--mint, #ecf1e9); }
+        .fill-sage { fill: var(--sage, #467361); }
+        .stroke-current { stroke: currentColor; }
+        .stroke-line { stroke: var(--line, rgb(54 42 76 / 14%)); }
+        .stroke-ink { stroke: var(--ink, #292631); }
+        .stroke-brand { stroke: var(--brand, #6b4cda); }
+        .stroke-brand\/20 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 20%, transparent); }
+        .stroke-brand\/25 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 25%, transparent); }
+        .stroke-brand\/30 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 30%, transparent); }
+        .stroke-brand\/35 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 35%, transparent); }
+        .stroke-brand\/40 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 40%, transparent); }
+        .stroke-brand\/45 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 45%, transparent); }
+        .stroke-brand\/50 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 50%, transparent); }
+        .stroke-brand\/60 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 60%, transparent); }
+        .stroke-brand\/65 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 65%, transparent); }
+        .stroke-brand\/70 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 70%, transparent); }
+        .stroke-draft { stroke: var(--draft, #b4a5d3); }
+        .stroke-draft\/50 { stroke: color-mix(in srgb, var(--draft, #b4a5d3) 50%, transparent); }
+        .stroke-sage { stroke: var(--sage, #467361); }
+        .stroke-sage\/35 { stroke: color-mix(in srgb, var(--sage, #467361) 35%, transparent); }
+        .text-ink { color: var(--ink, #292631); }
+        .text-\[\#505b93\] { color: var(--native-purple, #505b93); }
+        .text-\[\#00aaa6\] { color: var(--native-teal, #00aaa6); }
+        .font-mono { font-family: "IBM Plex Mono", monospace; }
+  </style>
+  <symbol id="asset" viewBox="0 0 24 24" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M11.9428 1.75H12.0572C14.2479 1.74999 15.9686 1.74998 17.312 1.93059C18.6886 2.11568 19.7809 2.50271 20.6391 3.36091C21.4973 4.21911 21.8843 5.31137 22.0694 6.68802C22.25 8.03144 22.25 9.75214 22.25 11.9428V12.0572C22.25 14.2479 22.25 15.9686 22.0694 17.312C21.8843 18.6886 21.4973 19.7809 20.6391 20.6391C19.7809 21.4973 18.6886 21.8843 17.312 22.0694C15.9686 22.25 14.2479 22.25 12.0572 22.25H11.9428C9.7521 22.25 8.03144 22.25 6.68802 22.0694C5.31137 21.8843 4.21911 21.4973 3.36091 20.6391C2.50272 19.7809 2.11568 18.6886 1.93059 17.312C1.74998 15.9686 1.74999 14.2479 1.75 12.0572V12.0572V11.9428V11.9428C1.74999 9.75211 1.74998 8.03144 1.93059 6.68802C2.11568 5.31137 2.50272 4.21911 3.36091 3.36091C4.21911 2.50271 5.31137 2.11568 6.68802 1.93059C8.03143 1.74998 9.75214 1.74999 11.9428 1.75ZM8.00195 10.5C8.00195 9.94771 7.55424 9.5 7.00195 9.5C6.44967 9.5 6.00195 9.94771 6.00195 10.5L6.00195 17C6.00195 17.5523 6.44967 18 7.00195 18C7.55424 18 8.00195 17.5523 8.00195 17L8.00195 10.5ZM11.002 9C11.4073 9 11.7564 9.2412 11.9134 9.58791C12.5213 9.215 13.2365 9 14.002 9C16.2111 9 18.002 10.7909 18.002 13V17C18.002 17.5523 17.5542 18 17.002 18C16.4497 18 16.002 17.5523 16.002 17V13C16.002 11.8954 15.1065 11 14.002 11C12.8974 11 12.002 11.8954 12.002 13L12.002 17C12.002 17.5523 11.5542 18 11.002 18C10.4497 18 10.002 17.5523 10.002 17L10.002 10C10.002 9.44771 10.4497 9 11.002 9ZM8.25977 7C8.25977 7.69036 7.70012 8.25 7.00977 8.25H7.00078C6.31043 8.25 5.75078 7.69036 5.75078 7C5.75078 6.30964 6.31043 5.75 7.00078 5.75H7.00977C7.70012 5.75 8.25977 6.30964 8.25977 7Z"
+                                  fill="currentColor"></path>
+  </symbol>
+  <use href="#asset"/>
+</svg>

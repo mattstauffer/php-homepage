@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 470">
+  <style>
+    .fill-none { fill: none; }
+        .fill-current { fill: currentColor; }
+        .fill-paper { fill: var(--paper, #fbfaf7); }
+        .fill-surface { fill: var(--surface, #ffffff); }
+        .fill-ink { fill: var(--ink, #292631); }
+        .fill-brand { fill: var(--brand, #6b4cda); }
+        .fill-brand\/12 { fill: color-mix(in srgb, var(--brand, #6b4cda) 12%, transparent); }
+        .fill-brand\/35 { fill: color-mix(in srgb, var(--brand, #6b4cda) 35%, transparent); }
+        .fill-lavender { fill: var(--lavender, #eee9fa); }
+        .fill-mint { fill: var(--mint, #ecf1e9); }
+        .fill-sage { fill: var(--sage, #467361); }
+        .stroke-current { stroke: currentColor; }
+        .stroke-line { stroke: var(--line, rgb(54 42 76 / 14%)); }
+        .stroke-ink { stroke: var(--ink, #292631); }
+        .stroke-brand { stroke: var(--brand, #6b4cda); }
+        .stroke-brand\/20 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 20%, transparent); }
+        .stroke-brand\/25 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 25%, transparent); }
+        .stroke-brand\/30 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 30%, transparent); }
+        .stroke-brand\/35 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 35%, transparent); }
+        .stroke-brand\/40 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 40%, transparent); }
+        .stroke-brand\/45 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 45%, transparent); }
+        .stroke-brand\/50 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 50%, transparent); }
+        .stroke-brand\/60 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 60%, transparent); }
+        .stroke-brand\/65 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 65%, transparent); }
+        .stroke-brand\/70 { stroke: color-mix(in srgb, var(--brand, #6b4cda) 70%, transparent); }
+        .stroke-draft { stroke: var(--draft, #b4a5d3); }
+        .stroke-draft\/50 { stroke: color-mix(in srgb, var(--draft, #b4a5d3) 50%, transparent); }
+        .stroke-sage { stroke: var(--sage, #467361); }
+        .stroke-sage\/35 { stroke: color-mix(in srgb, var(--sage, #467361) 35%, transparent); }
+        .text-ink { color: var(--ink, #292631); }
+        .text-\[\#505b93\] { color: var(--native-purple, #505b93); }
+        .text-\[\#00aaa6\] { color: var(--native-teal, #00aaa6); }
+        .font-mono { font-family: "IBM Plex Mono", monospace; }
+  </style>
+  <symbol id="asset" viewBox="0 0 630 470">
+<g class="stroke-brand/25" stroke-width="1.2"><path d="M73 108h105q25 0 25 25v41q0 25 25 25h45M483 94h-63q-25 0-25 25v55q0 25-25 25h-45M82 349h99q25 0 25-25v-54q0-25 25-25h43M511 334h-99q-25 0-25-25v-40q0-25-25-25h-40"/><path d="M26 222h570M314 30v414" stroke-dasharray="3 7"/><circle cx="314" cy="224" r="135" stroke-dasharray="3 7"/><circle cx="314" cy="224" r="175" opacity=".5"/></g>
+    <g class="fill-paper stroke-brand/20"><rect x="39" y="79" width="158" height="57" rx="10"/><rect x="451" y="64" width="127" height="58" rx="10"/><rect x="49" y="324" width="130" height="58" rx="10"/><rect x="439" y="307" width="143" height="58" rx="10"/></g>
+    <g class="fill-ink font-mono" font-size="13" text-anchor="middle"><text x="118" y="113">Pages &amp; content</text><text x="514" y="99">Databases</text><text x="114" y="359">Forms &amp; files</text><text x="510" y="342">APIs &amp; JSON</text></g>
+    <g class="stroke-brand/25" stroke-width="1.2"><path d="M314 78v70m0 175v47"/></g>
+    <g class="fill-paper stroke-brand/20"><rect x="265" y="31" width="98" height="46" rx="9"/><rect x="253" y="371" width="122" height="46" rx="9"/></g>
+    <g class="fill-ink font-mono" font-size="13" text-anchor="middle"><text x="314" y="59">Streams</text><text x="314" y="399">AI &amp; agents</text></g>
+    <g transform="translate(217 148) rotate(-8 97 75)"><rect x="12" y="22" width="194" height="151" rx="16" class="fill-brand/12 stroke-brand/30"/><rect x="6" y="11" width="194" height="151" rx="16" class="fill-lavender stroke-brand/40"/><rect width="194" height="151" rx="16" class="fill-surface stroke-brand/60"/><path d="M0 32h194" class="stroke-brand/20"/><g class="fill-brand/35"><circle cx="18" cy="16" r="3"/><circle cx="30" cy="16" r="3"/><circle cx="42" cy="16" r="3"/></g><svg x="43" y="58" width="110" height="55" viewBox="0 -1 100 50" class="fill-brand"><use href="./php-mark.svg#asset"/></svg></g>
+    <g class="fill-paper stroke-brand" stroke-width="1.5"><circle cx="451" cy="94" r="4"/><circle cx="180" cy="349" r="4"/><circle cx="439" cy="334" r="4"/></g>
+  </symbol>
+  <use href="#asset"/>
+</svg>
