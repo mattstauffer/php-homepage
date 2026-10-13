@@ -1,5 +1,8 @@
 # PHP.net homepage concept
 
+Design by Jack McDade of Statamic.
+
+Notes from Jack:
 This concept gives the homepage a new story while keeping it visibly connected to the [approved PHP 8.5 release page](https://www.php.net/releases/8.5/en.php). These are the clearest points of continuity to show the committee.
 
 ## What carries over
@@ -21,15 +24,4 @@ The new content explains PHP’s role across the web, shows its package ecosyste
 
 ## Sharing
 
-`PHP homepage V2.zip` includes this README, `index.html`, `styles.css`, `script.js`, and the SVGs used by the page. Keep the folder structure intact. In the share archive, the SVG icons are embedded into `index.html` so it can be opened directly after unzipping; the SVG files are also included for editing. Tailwind and the web fonts still load from online CDNs.
-
-## What’s changed since last time
-
-- **Navigation and pacing:** Added the language, search, and compact theme controls; removed extra labels; and gave the page more room between sections.
-- **Proof and packages:** Refined the company-logo grid and replaced the framework showcase with a focused Composer, Packagist, and PIE section, including package-ecosystem metrics.
-- **Code demonstration:** Added a compact, interactive editor with three PHP examples and a terminal-style output area.
-- **PHP 8.5:** Enlarged the release number and refined the panel around the three approved feature summaries already present in Matt v1.
-- **Community and next steps:** Gave the Foundation panel more presence and turned Get Started into three clear cards covering setup, learning, and packages.
-- **Finishing details:** Added a small release timeline above the footer, subtle editorial accents, and floating shadows on the Composer, Packagist, and Foundation badges.
-- **Hand refinement:** I removed all the AI-style design elements and went through the page by hand, fine-tuning spacing, typography, copy, and flow.
-
+The SVG icons are embedded into `index.html` so it can be opened directly after unzipping; the SVG files are also included for editing. Tailwind and the web fonts still load from online CDNs.
