@@ -230,7 +230,7 @@
         <div class="hero-grid pointer-events-none absolute inset-0 -z-10" aria-hidden="true"></div>
         <div class="relative mx-auto max-w-[1280px] px-14">
           <h1 id="hero-heading" class="relative z-10 max-w-[760px] text-hero font-semibold tracking-[-0.065em]">The web runs<br>on <span class="text-brand dark:text-ink">PHP.</span></h1>
-          <p class="relative z-10 mt-7 max-w-[610px] text-lg/8 text-pretty text-muted">Build websites, APIs, and applications with a modern, open source language, mature tools, and a global community.</p>
+          <p class="relative z-10 mt-7 max-w-[610px] text-lg/8 text-pretty text-muted">Build websites, APIs, and applications with a modern, open source language, mature tools, and a global community. It's a scripting language too, just as strong  on the command line as on the web.</p>
           <div class="relative z-10 mt-8 flex items-center gap-8 text-sm font-medium"><a href="#start" class="inline-flex items-center justify-center gap-5 rounded-xl px-6 py-4 font-medium bg-brand text-white shadow-[inset_0_1px_0_#ffffff30] hover:bg-brand-strong dark:text-paper dark:shadow-none">Get started<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true"><use href="#share-arrow-right"/></svg></a><a href="https://www.php.net/downloads.php" class="inline-flex items-center gap-3 hover:text-brand">Download PHP<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true"><use href="#share-arrow-up-right"/></svg></a></div>
           <div class="draft-enter pointer-events-none absolute top-9 right-9 h-88 w-[430px]" aria-hidden="true">
             <svg viewBox="0 0 360 300" class="size-full fill-none stroke-draft"><use href="#share-hero-php-globe"/></svg>
@@ -306,7 +306,7 @@
         <div class="mx-auto max-w-[1280px] px-14">
           <div class="text-center">
             <h2 id="language-heading" class="mx-auto max-w-[24ch] text-6xl font-medium tracking-[-0.045em] text-balance">Everything the web needs.</h2>
-            <p class="mx-auto mt-6 max-w-[48ch] text-lg/8 text-pretty text-muted">Dynamic pages. Data. Content. APIs. Forms, files, streams, and agents. PHP connects the pieces of the modern web.</p>
+            <p class="mx-auto mt-6 max-w-[48ch] text-lg/8 text-pretty text-muted">Security. AI &amp; agents. APIs &amp; JSON. Databases. Scalability. Performance. PHP connects the pieces of the modern web.</p>
           </div>
           <div class="relative mt-16">
             <div class="overflow-hidden rounded-3xl border border-line bg-surface">
@@ -325,7 +325,7 @@
             </div>
           </div>
           <div class="flex items-center justify-center px-8 pt-24 pb-5">
-            <p class="text-[1.0625rem]/7 text-pretty text-muted">We’ve come a long way from a <span class="relative whitespace-nowrap text-ink">pretty home page.<svg viewBox="0 0 220 14" preserveAspectRatio="none" class="pointer-events-none absolute -bottom-2 left-0 h-3 w-full fill-none stroke-brand/55" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 7C54 2 147 3 217 5M20 11C78 7 145 8 192 9"/></svg></span> </p>
+            <p class="text-[1.0625rem]/7 text-pretty text-muted">We’ve come a long way from a <span class="relative whitespace-nowrap text-ink">personal home page.<svg viewBox="0 0 220 14" preserveAspectRatio="none" class="pointer-events-none absolute -bottom-2 left-0 h-3 w-full fill-none stroke-brand/55" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 7C54 2 147 3 217 5M20 11C78 7 145 8 192 9"/></svg></span> </p>
           </div>
           <div data-code-showcase class="mx-8 overflow-hidden rounded-3xl border border-line bg-(--editor-canvas)">
             <div class="grid grid-cols-[280px_minmax(0,1fr)]">
@@ -340,10 +340,22 @@
                   <button
                     type="button"
                     role="tab"
-                    id="example-tab-streams"
-                    aria-controls="example-streams"
+                    id="example-tab-controller"
+                    aria-controls="example-controller"
                     aria-selected="true"
                     tabindex="0"
+                    class="group relative flex h-10 items-center gap-2.5 px-5 text-left font-mono text-xs text-muted hover:bg-brand/5 aria-selected:bg-brand/10 aria-selected:text-ink focus-visible:outline-offset-[-3px]"
+                  >
+                    <span class="absolute inset-y-0 left-0 w-0.5 bg-brand opacity-0 group-aria-selected:opacity-100" aria-hidden="true"></span>
+                    <span>UserController.php</span>
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    id="example-tab-streams"
+                    aria-controls="example-streams"
+                    aria-selected="false"
+                    tabindex="-1"
                     class="group relative flex h-10 items-center gap-2.5 px-5 text-left font-mono text-xs text-muted hover:bg-brand/5 aria-selected:bg-brand/10 aria-selected:text-ink focus-visible:outline-offset-[-3px]"
                   >
                     <span class="absolute inset-y-0 left-0 w-0.5 bg-brand opacity-0 group-aria-selected:opacity-100" aria-hidden="true"></span>
@@ -382,6 +394,7 @@
                   aria-labelledby="example-tab-streams"
                   tabindex="0"
                   class="focus-visible:outline-offset-[-3px]"
+                  hidden
                 >
                   <div class="bg-(--editor-canvas) text-(--code-text)">
                     <div class="flex h-12 items-center justify-between border-b border-line bg-(--editor-sidebar) pr-5">
@@ -597,6 +610,85 @@ bool(false)</span></pre>
                     </div>
                   </div>
                 </div>
+                <div
+                  id="example-controller"
+                  role="tabpanel"
+                  aria-labelledby="example-tab-controller"
+                  tabindex="0"
+                  class="focus-visible:outline-offset-[-3px]"
+                >
+                  <div class="bg-(--editor-canvas) text-(--code-text)">
+                    <div class="flex h-12 items-center justify-between border-b border-line bg-(--editor-sidebar) pr-5">
+                      <div class="flex h-full items-center gap-3 border-t-2 border-r border-t-brand border-r-line bg-(--editor-canvas) px-6 font-mono text-xs">
+                        <span>UserController.php</span>
+                      </div>
+                      <button
+                        type="button"
+                        data-copy-example
+                        class="relative flex size-8 items-center justify-center rounded-md text-muted hover:bg-brand/10 hover:text-ink focus-visible:outline-brand"
+                        aria-label="Copy UserController.php"
+                        title="Copy code"
+                      >
+                        <span class="absolute top-1/2 left-1/2 size-[max(100%,3rem)] -translate-1/2 pointer-fine:hidden" aria-hidden="true"></span>
+                        <svg viewBox="0 0 16 16" class="size-4 fill-current" aria-hidden="true">
+                          <use href="#share-document-duplicate"/>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="flex gap-5 overflow-x-auto px-6 py-5 font-mono text-sm/6">
+                      <pre aria-hidden="true" class="shrink-0 select-none border-r border-line pr-5 text-right text-(--code-gutter)">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre>
+                      <pre class="min-w-0"><code data-example-code><span class="text-(--code-comment)">&lt;?php</span>
+<span class="text-(--code-comment) italic">// Map a web request to a JSON response.</span>
+
+<span class="text-(--code-keyword)">class</span> <span class="text-(--code-type)">UserController</span>
+{
+    <span class="text-(--code-keyword)">public function</span> <span class="text-(--code-function)">__construct</span>(
+        <span class="text-(--code-keyword)">private readonly</span> <span class="text-(--code-type)">UserRepository</span> <span class="text-(--code-text)">$users</span>,
+    ) {}
+
+    #[<span class="text-(--code-function)">Route</span>(<span class="text-(--code-string)">&#x27;/users/{id}&#x27;</span>, methods: [<span class="text-(--code-string)">&#x27;GET&#x27;</span>])]
+    <span class="text-(--code-keyword)">public function</span> <span class="text-(--code-function)">show</span>(int <span class="text-(--code-text)">$id</span>): <span class="text-(--code-type)">Response</span>
+    {
+        <span class="text-(--code-text)">$user</span> = <span class="text-(--code-text)">$this</span>-&gt;<span class="text-(--code-text)">users</span>-&gt;<span class="text-(--code-function)">find</span>(<span class="text-(--code-text)">$id</span>)
+            ?? <span class="text-(--code-keyword)">throw new</span> <span class="text-(--code-function)">NotFoundException</span>();
+
+        <span class="text-(--code-keyword)">return</span> <span class="text-(--code-type)">Response</span>::<span class="text-(--code-function)">json</span>([
+            <span class="text-(--code-string)">&#x27;id&#x27;</span> =&gt; <span class="text-(--code-text)">$user</span>-&gt;<span class="text-(--code-text)">id</span>,
+            <span class="text-(--code-string)">&#x27;name&#x27;</span> =&gt; <span class="text-(--code-text)">$user</span>-&gt;<span class="text-(--code-text)">name</span>,
+        ]);
+    }
+}</code></pre>
+                    </div>
+                    <div role="region" aria-label="Example terminal session" class="border-t border-line bg-(--editor-sidebar)">
+                      <div class="flex h-9 items-center justify-between border-b border-line px-6 font-mono text-xs">
+                        <p class="flex h-full items-center border-b border-brand text-(--code-text)">Terminal</p>
+                        <p class="text-(--code-comment)">Example session</p>
+                      </div>
+                      <pre class="min-h-31 overflow-x-auto px-6 py-3 font-mono text-sm/5 text-(--code-text)"><span class="select-none text-brand" aria-hidden="true">$ </span><span class="text-(--code-function)">curl</span> localhost:8000/users/42
+<span class="text-(--code-comment)">{&quot;id&quot;:42,&quot;name&quot;:&quot;Ada Lovelace&quot;}</span></pre>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <p data-copy-status role="status" class="sr-only"></p>
@@ -724,7 +816,7 @@ bool(false)</span></pre>
           <div class="grid grid-cols-2 gap-6">
             <div class="flex flex-col items-start justify-center pr-12">
               <h2 id="community-heading" class="max-w-[24ch] text-6xl font-medium tracking-[-0.045em]">Built by people.<br>Open by design.</h2>
-              <p class="mt-8 max-w-[39ch] text-lg/8 text-pretty text-muted">PHP has been community-owned for 30 years. The language evolves through public proposals, discussion, and votes, and is <strong class="font-semibold">beholden to no one person or organization.</strong></p>
+              <p class="mt-8 max-w-[39ch] text-lg/8 text-pretty text-muted">PHP has been community-owned for 30 years. The language evolves through public proposals, discussion, and votes, and is <strong class="font-semibold">free from corporate control.</strong></p>
               <p class="mt-5 max-w-[39ch] text-lg/8 text-pretty text-muted">Contribute to the language, improve the docs, or help someone find their feet. There’s a place for you here.</p>
               <div class="mt-9 flex flex-wrap items-center gap-7 text-sm font-medium"><a href="https://www.php.net/get-involved.php" class="inline-flex items-center justify-center gap-5 rounded-xl px-6 py-4 font-medium bg-brand text-white shadow-[inset_0_1px_0_#ffffff30] hover:bg-brand-strong dark:text-paper dark:shadow-none">Get involved<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true"><use href="#share-arrow-right"/></svg></a><a href="https://wiki.php.net/rfc" class="inline-flex items-center gap-3 hover:text-brand">Explore the RFCs<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true"><use href="#share-arrow-up-right"/></svg></a></div>
             </div>
@@ -1285,6 +1377,7 @@ bool(false)</span></pre>
                         <ul role="list">
                             <li><a href="https://www.php.net/my.php">My PHP.net</a></li>
                             <li><a href="https://www.php.net/downloads.php">Downloads</a></li>
+                            <li><a href="https://www.php.net/releases/">News &amp; releases archive</a></li>
                             <li><a href="https://www.php.net/contact.php">Contact</a></li>
                             <li><a href="https://www.php.net/sites.php">Other PHP.net sites</a></li>
                         </ul>
