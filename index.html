@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css?v=14">
-  <script src="./script.js?v=9"></script>
+  <script src="./script.js?v=10"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
     @custom-variant dark (&:where(.dark, .dark *));
@@ -200,16 +200,16 @@
   <!-- Brand marks: PHP.net, Simple Icons, Worldvectorlogo. Adoption links identify the specific project or historical use. UI icons: Heroicons, MIT license. -->
   <div class="isolate">
     <header class="relative z-20 mx-auto max-w-[1280px] border-x border-b border-line bg-paper/90">
-      <div class="flex h-22 items-center justify-between px-14">
+      <div class="flex h-22 items-center justify-between px-5 sm:px-8 lg:px-14">
         <div class="flex items-center gap-5">
           <a href="./" aria-label="PHP homepage"><svg viewBox="0 -1 100 50" class="h-9 w-18 fill-current" aria-hidden="true"><use href="#share-php-mark"/></svg></a>
-          <div class="text-xs font-medium"><a href="#release" class="inline-flex items-center gap-2 rounded-full border border-brand/15 bg-lavender/70 py-1.5 pr-2 pl-3 text-brand hover:bg-lavender"><span class="size-1.5 shrink-0 rounded-full bg-sage" aria-hidden="true"></span>8.5 is here<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true"><use href="#share-arrow-right"/></svg></a></div>
+          <div class="hidden text-xs font-medium sm:block"><a href="#release" class="inline-flex items-center gap-2 rounded-full border border-brand/15 bg-lavender/70 py-1.5 pr-2 pl-3 text-brand hover:bg-lavender"><span class="size-1.5 shrink-0 rounded-full bg-sage" aria-hidden="true"></span>8.5 is here<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true"><use href="#share-arrow-right"/></svg></a></div>
         </div>
-        <nav aria-label="Main navigation" class="flex items-center gap-9 text-sm font-medium">
+        <nav aria-label="Main navigation" class="hidden items-center gap-9 text-sm font-medium lg:flex">
           <a href="#start" class="hover:text-brand">Get started</a><a href="https://www.php.net/downloads.php" class="hover:text-brand">Downloads</a><a href="https://www.php.net/docs.php" class="hover:text-brand">Documentation</a><a href="#community" class="hover:text-brand">Community</a>
         </nav>
         <div class="flex items-center gap-2">
-          <label class="relative">
+          <label class="relative hidden lg:block">
             <span class="sr-only">Language</span>
             <select class="h-10 appearance-none rounded-lg border border-line bg-surface py-2 pr-9 pl-3 text-sm hover:bg-lavender focus:outline-none">
               <option>English</option>
@@ -222,25 +222,35 @@
           <button type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false" class="flex size-10 items-center justify-center rounded-lg border border-line bg-surface hover:bg-lavender">
             <svg viewBox="0 0 24 24" class="size-5 fill-none stroke-ink dark:hidden" aria-hidden="true"><use href="#share-sun"/></svg><svg viewBox="0 0 24 24" class="size-5 fill-none stroke-ink not-dark:hidden" aria-hidden="true"><use href="#share-moon"/></svg>
           </button>
+          <button type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" class="group flex size-10 items-center justify-center rounded-lg border border-line bg-surface hover:bg-lavender lg:hidden">
+            <svg viewBox="0 0 24 24" class="size-5 stroke-ink group-aria-expanded:hidden" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            <svg viewBox="0 0 24 24" class="hidden size-5 stroke-ink group-aria-expanded:block" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </button>
         </div>
       </div>
+      <nav id="mobile-menu" aria-label="Mobile navigation" hidden class="border-t border-line px-5 py-3 text-sm font-medium sm:px-8 lg:hidden">
+        <a href="#start" class="block rounded-lg px-3 py-3 hover:bg-lavender hover:text-brand">Get started</a>
+        <a href="https://www.php.net/downloads.php" class="block rounded-lg px-3 py-3 hover:bg-lavender hover:text-brand">Downloads</a>
+        <a href="https://www.php.net/docs.php" class="block rounded-lg px-3 py-3 hover:bg-lavender hover:text-brand">Documentation</a>
+        <a href="#community" class="block rounded-lg px-3 py-3 hover:bg-lavender hover:text-brand">Community</a>
+      </nav>
     </header>
     <main id="main" class="page-guides relative">
       <section class="relative overflow-hidden py-24" aria-labelledby="hero-heading">
         <div class="hero-grid pointer-events-none absolute inset-0 -z-10" aria-hidden="true"></div>
-        <div class="relative mx-auto max-w-[1280px] px-14">
-          <h1 id="hero-heading" class="relative z-10 max-w-[760px] text-hero font-semibold tracking-[-0.065em]">The web runs<br>on <span class="text-brand dark:text-ink">PHP.</span></h1>
+        <div class="relative mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-14">
+          <h1 id="hero-heading" class="relative z-10 max-w-[760px] text-6xl sm:text-8xl lg:text-hero font-semibold tracking-[-0.065em]">The web runs<br>on <span class="text-brand dark:text-ink">PHP.</span></h1>
           <p class="relative z-10 mt-7 max-w-[610px] text-lg/8 text-pretty text-muted">Build websites, APIs, and applications with a modern, open source language, mature tools, and a global community. It's a scripting language too, just as strong  on the command line as on the web.</p>
-          <div class="relative z-10 mt-8 flex items-center gap-8 text-sm font-medium"><a href="#start" class="inline-flex items-center justify-center gap-5 rounded-xl px-6 py-4 font-medium bg-brand text-white shadow-[inset_0_1px_0_#ffffff30] hover:bg-brand-strong dark:text-paper dark:shadow-none">Get started<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true"><use href="#share-arrow-right"/></svg></a><a href="https://www.php.net/downloads.php" class="inline-flex items-center gap-3 hover:text-brand">Download PHP<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true"><use href="#share-arrow-up-right"/></svg></a></div>
+          <div class="relative z-10 mt-8 flex flex-col items-stretch gap-4 text-sm font-medium sm:flex-row sm:items-center sm:gap-8"><a href="#start" class="inline-flex items-center justify-center gap-5 rounded-xl px-6 py-4 font-medium bg-brand text-white shadow-[inset_0_1px_0_#ffffff30] hover:bg-brand-strong dark:text-paper dark:shadow-none">Get started<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true"><use href="#share-arrow-right"/></svg></a><a href="https://www.php.net/downloads.php" class="inline-flex items-center justify-center gap-3 hover:text-brand">Download PHP<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true"><use href="#share-arrow-up-right"/></svg></a></div>
           <div class="draft-enter pointer-events-none absolute top-9 right-9 h-88 w-[430px]" aria-hidden="true">
-            <svg viewBox="0 0 360 300" class="size-full fill-none stroke-draft"><use href="#share-hero-php-globe"/></svg>
+            <svg viewBox="0 0 360 300" class="size-full fill-none stroke-draft opacity-20 md:opacity-50 lg:opacity-100"><use href="#share-hero-php-globe"/></svg>
           </div>
         </div>
       </section>
       <section id="proof" class="border-y border-line bg-surface/50 py-7" aria-labelledby="proof-heading">
-        <div class="mx-auto max-w-[1280px] px-14">
+        <div class="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-14">
           <h2 id="proof-heading" class="sr-only">Selected projects built with PHP</h2>
-          <div class="relative"><ul role="list" class="grid grid-cols-6" aria-label="Selected projects built with PHP"><li class="flex min-w-0 items-center justify-center">
+          <div class="relative"><ul role="list" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6" aria-label="Selected projects built with PHP"><li class="flex min-w-0 items-center justify-center">
                     <a href="https://about.nike.com/" aria-label="Nike" title="Nike" class="flex items-center justify-center rounded-sm px-3 py-7 text-ink/75 hover:text-brand">
                       <div class="flex h-7 items-center justify-center gap-2 text-base font-semibold tracking-tight"><svg viewBox="0 0 24 9" class="h-5 w-14 shrink-0 fill-current" aria-hidden="true"><use href="#share-nike"/></svg></div>
                     </a>
@@ -283,19 +293,19 @@
                     </a>
                   </li>
 <li class="flex min-w-0 items-center justify-center"><a href="https://www.lemonsqueezy.com/" aria-label="Lemon Squeezy" title="Lemon Squeezy" class="flex items-center justify-center gap-2 rounded-sm px-3 py-7 font-semibold text-ink/75 hover:text-brand"><svg viewBox="0 0 24 24" class="size-5 fill-current" aria-hidden="true"><use href="#share-lemon-squeezy"/></svg><span class="text-sm tracking-tight">Lemon Squeezy</span></a></li>
-<li class="flex min-w-0 items-center justify-center"><a href="https://www.mediawiki.org/wiki/MediaWiki" aria-label="Wikipedia: Built on MediaWiki. Read the project story." title="Wikipedia: Built on MediaWiki" class="flex items-center justify-center gap-2 rounded-sm px-3 py-7 font-semibold text-ink/75 hover:text-brand"><svg viewBox="0 0 24 24" class="size-6 fill-current" aria-hidden="true"><use href="#share-wikipedia"/></svg><span class="font-serif text-lg">Wikipedia</span></a></li></ul><div class="pointer-events-none absolute top-1/2 left-[16.6667%] h-40 w-36 -translate-x-1/2 -translate-y-1/2 opacity-50" aria-hidden="true">
+<li class="flex min-w-0 items-center justify-center"><a href="https://www.mediawiki.org/wiki/MediaWiki" aria-label="Wikipedia: Built on MediaWiki. Read the project story." title="Wikipedia: Built on MediaWiki" class="flex items-center justify-center gap-2 rounded-sm px-3 py-7 font-semibold text-ink/75 hover:text-brand"><svg viewBox="0 0 24 24" class="size-6 fill-current" aria-hidden="true"><use href="#share-wikipedia"/></svg><span class="font-serif text-lg">Wikipedia</span></a></li></ul><div class="pointer-events-none absolute top-1/2 left-[16.6667%] hidden h-40 w-36 -translate-x-1/2 -translate-y-1/2 opacity-50 lg:block" aria-hidden="true">
               <div class="absolute top-1/2 h-px w-full bg-linear-to-r from-transparent via-draft/60 to-transparent"></div>
               <div class="absolute left-1/2 h-full w-px bg-linear-to-b from-transparent via-draft/60 to-transparent"></div>
-            </div><div class="pointer-events-none absolute top-1/2 left-[33.3333%] h-40 w-36 -translate-x-1/2 -translate-y-1/2 opacity-50" aria-hidden="true">
+            </div><div class="pointer-events-none absolute top-1/2 left-[33.3333%] hidden h-40 w-36 -translate-x-1/2 -translate-y-1/2 opacity-50 lg:block" aria-hidden="true">
               <div class="absolute top-1/2 h-px w-full bg-linear-to-r from-transparent via-draft/60 to-transparent"></div>
               <div class="absolute left-1/2 h-full w-px bg-linear-to-b from-transparent via-draft/60 to-transparent"></div>
-            </div><div class="pointer-events-none absolute top-1/2 left-[50%] h-40 w-36 -translate-x-1/2 -translate-y-1/2 opacity-50" aria-hidden="true">
+            </div><div class="pointer-events-none absolute top-1/2 left-[50%] hidden h-40 w-36 -translate-x-1/2 -translate-y-1/2 opacity-50 lg:block" aria-hidden="true">
               <div class="absolute top-1/2 h-px w-full bg-linear-to-r from-transparent via-draft/60 to-transparent"></div>
               <div class="absolute left-1/2 h-full w-px bg-linear-to-b from-transparent via-draft/60 to-transparent"></div>
-            </div><div class="pointer-events-none absolute top-1/2 left-[66.6667%] h-40 w-36 -translate-x-1/2 -translate-y-1/2 opacity-50" aria-hidden="true">
+            </div><div class="pointer-events-none absolute top-1/2 left-[66.6667%] hidden h-40 w-36 -translate-x-1/2 -translate-y-1/2 opacity-50 lg:block" aria-hidden="true">
               <div class="absolute top-1/2 h-px w-full bg-linear-to-r from-transparent via-draft/60 to-transparent"></div>
               <div class="absolute left-1/2 h-full w-px bg-linear-to-b from-transparent via-draft/60 to-transparent"></div>
-            </div><div class="pointer-events-none absolute top-1/2 left-[83.3333%] h-40 w-36 -translate-x-1/2 -translate-y-1/2 opacity-50" aria-hidden="true">
+            </div><div class="pointer-events-none absolute top-1/2 left-[83.3333%] hidden h-40 w-36 -translate-x-1/2 -translate-y-1/2 opacity-50 lg:block" aria-hidden="true">
               <div class="absolute top-1/2 h-px w-full bg-linear-to-r from-transparent via-draft/60 to-transparent"></div>
               <div class="absolute left-1/2 h-full w-px bg-linear-to-b from-transparent via-draft/60 to-transparent"></div>
             </div></div>
@@ -303,33 +313,33 @@
       </section>
 
       <section id="language" class="py-32" aria-labelledby="language-heading">
-        <div class="mx-auto max-w-[1280px] px-14">
+        <div class="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-14">
           <div class="text-center">
             <h2 id="language-heading" class="mx-auto max-w-[24ch] text-6xl font-medium tracking-[-0.045em] text-balance">Everything the web needs.</h2>
             <p class="mx-auto mt-6 max-w-[48ch] text-lg/8 text-pretty text-muted">Security. AI &amp; agents. APIs &amp; JSON. Databases. Scalability. Performance. PHP connects the pieces of the modern web.</p>
           </div>
           <div class="relative mt-16">
             <div class="overflow-hidden rounded-3xl border border-line bg-surface">
-              <div class="grid grid-cols-[5fr_7fr] gap-0">
-                <div class="flex flex-col items-start justify-center p-14">
+              <div class="grid grid-cols-1 gap-0 lg:grid-cols-[5fr_7fr]">
+                <div class="flex flex-col items-start justify-center p-8 sm:p-12 lg:p-14">
                   <h3 class="max-w-[19ch] text-4xl font-medium tracking-tight text-balance">Made for the web.<br>From the beginning.</h3>
                   <p class="mt-7 max-w-[34ch] text-lg/8 text-pretty text-muted">PHP has grown with the web. From dynamic pages and forms to data pipelines and AI agents, the language and its ecosystem grow with your application.</p>
                   <div class="mt-9 text-sm font-medium text-brand"><a href="https://www.php.net/manual/en/intro-whatis.php" class="inline-flex items-center gap-3 hover:text-brand">Meet the language<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true"><use href="#share-arrow-up-right"/></svg></a></div>
                 </div>
-                <div class="relative flex min-h-120 items-center justify-center overflow-hidden border-l border-line bg-lavender/65" aria-hidden="true">
+                <div class="relative flex min-h-80 items-center justify-center overflow-hidden border-t border-line bg-lavender/65 lg:min-h-120 lg:border-t-0 lg:border-l" aria-hidden="true">
   <div class="draft-grid absolute inset-0 opacity-80"></div>
   <svg viewBox="0 0 630 470" class="relative h-full w-full fill-none"><use href="#share-web-capabilities"/></svg>
 </div>
               </div>
-              <div class="flex items-center justify-between border-t border-line bg-paper/60 px-14 py-5 text-sm text-muted"><p>From a single request to long-running services.</p><p class="flex items-center gap-2 font-mono text-xs"><span class="size-1.5 rounded-full bg-sage"></span>Open source since 1995</p></div>
+              <div class="flex flex-col gap-3 border-t border-line bg-paper/60 px-8 py-5 text-sm text-muted sm:flex-row sm:items-center sm:justify-between lg:px-14"><p>From a single request to long-running services.</p><p class="flex items-center gap-2 font-mono text-xs"><span class="size-1.5 shrink-0 rounded-full bg-sage"></span>Open source since 1995</p></div>
             </div>
           </div>
           <div class="flex items-center justify-center px-8 pt-24 pb-5">
             <p class="text-[1.0625rem]/7 text-pretty text-muted">We’ve come a long way from a <span class="relative whitespace-nowrap text-ink">personal home page.<svg viewBox="0 0 220 14" preserveAspectRatio="none" class="pointer-events-none absolute -bottom-2 left-0 h-3 w-full fill-none stroke-brand/55" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 7C54 2 147 3 217 5M20 11C78 7 145 8 192 9"/></svg></span> </p>
           </div>
-          <div data-code-showcase class="mx-8 overflow-hidden rounded-3xl border border-line bg-(--editor-canvas)">
-            <div class="grid grid-cols-[280px_minmax(0,1fr)]">
-              <div class="border-r border-line bg-(--editor-sidebar)">
+          <div data-code-showcase class="mx-0 overflow-hidden rounded-3xl border border-line bg-(--editor-canvas) sm:mx-8">
+            <div class="grid grid-cols-1 lg:grid-cols-[280px_minmax(0,1fr)]">
+              <div class="border-b border-line bg-(--editor-sidebar) lg:border-r lg:border-b-0">
                 <p class="flex h-12 items-center gap-2 border-b border-line px-5 font-mono text-xs text-muted">
                   <svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-muted" aria-hidden="true">
                     <use href="#share-folder-open"/>
@@ -698,34 +708,34 @@ bool(false)</span></pre>
 
       <section id="ecosystem" class="relative border-y border-line bg-lavender/35 py-28" aria-labelledby="ecosystem-heading">
         <div class="hatch absolute inset-x-0 top-0 h-4 border-b border-line" aria-hidden="true"></div>
-        <div class="mx-auto max-w-[1280px] px-14">
-          <div class="flex items-end justify-between gap-6">
-            <h2 id="ecosystem-heading" class="max-w-[24ch] text-6xl font-medium tracking-[-0.045em]">A package for<br>almost everything.</h2>
+        <div class="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-14">
+          <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
+            <h2 id="ecosystem-heading" class="max-w-[24ch] text-5xl font-medium tracking-[-0.045em] sm:text-6xl">A package for<br>almost everything.</h2>
             <p class="pb-3 text-[1.0625rem]/7 text-pretty text-muted">A little less <span class="relative whitespace-nowrap text-ink">reinventing the wheel.<svg viewBox="0 0 220 14" preserveAspectRatio="none" class="pointer-events-none absolute -bottom-2 left-0 h-3 w-full fill-none stroke-brand/55" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 7C54 2 147 3 217 5M20 11C78 7 145 8 192 9"/></svg></span> </p>
           </div>
 
           <div class="relative mt-12 rounded-3xl border border-line bg-surface">
-            <div class="grid grid-cols-[5fr_7fr]">
-              <div class="relative overflow-hidden rounded-tl-3xl border-r border-line bg-paper p-12">
+            <div class="grid grid-cols-1 lg:grid-cols-[5fr_7fr]">
+              <div class="relative overflow-hidden rounded-t-3xl border-b border-line bg-paper p-8 sm:p-12 lg:rounded-tr-none lg:rounded-tl-3xl lg:border-r lg:border-b-0">
                 <div class="dot-paper absolute inset-0" aria-hidden="true"></div>
                 <div class="relative">
                   <p class="text-[6.5rem]/none font-semibold tracking-[-0.07em] text-brand">472K</p>
                   <p class="mt-4 text-xl font-medium">packages published</p>
                   <div class="mt-8 flex items-start gap-3">
-                    <div class="rounded-xl border border-line bg-surface/85 px-5 py-4">
-                      <p class="text-4xl/none font-medium tracking-tight">5.89M</p>
+                    <div class="min-w-0 flex-1 rounded-xl border border-line bg-surface/85 px-4 py-4 sm:px-5 lg:flex-initial">
+                      <p class="text-3xl/none font-medium tracking-tight sm:text-4xl/none">5.89M</p>
                       <p class="mt-2 text-sm text-muted">versions</p>
                     </div>
-                    <div class="rounded-xl border border-line bg-surface/85 px-5 py-4">
-                      <p class="text-4xl/none font-medium tracking-tight">203B+</p>
+                    <div class="min-w-0 flex-1 rounded-xl border border-line bg-surface/85 px-4 py-4 sm:px-5 lg:flex-initial">
+                      <p class="text-3xl/none font-medium tracking-tight sm:text-4xl/none">203B+</p>
                       <p class="mt-2 text-sm text-muted">installs</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="relative p-12 pt-16">
-                <div class="absolute -top-9 left-12 flex h-24 items-center gap-3" aria-hidden="true">
+              <div class="relative p-8 pt-16 sm:p-12 sm:pt-16">
+                <div class="absolute -top-9 left-8 flex h-24 items-center gap-3 sm:left-12" aria-hidden="true">
                   <div class="flex size-24 -rotate-6 items-center justify-center rounded-2xl border border-transparent bg-[#fbfaf7] ring-1 ring-black/5 shadow-[0_2px_3px_-1px_rgb(49_35_74/8%),0_14px_18px_-8px_rgb(49_35_74/20%),0_28px_28px_-16px_rgb(49_35_74/18%)] dark:shadow-none">
                     <img src="./assets/svg/composer.svg" alt="" width="47" height="62" class="h-20 w-15" loading="lazy">
                   </div>
@@ -743,7 +753,7 @@ bool(false)</span></pre>
               </div>
             </div>
 
-            <div class="flex items-center justify-between gap-12 rounded-b-3xl border-t border-line bg-paper/60 px-12 py-8">
+            <div class="flex flex-col gap-6 rounded-b-3xl border-t border-line bg-paper/60 px-8 py-8 sm:px-12 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
               <div class="flex items-center gap-5">
                 <div class="flex size-12 shrink-0 items-center justify-center rounded-xl border border-line bg-surface text-2xl" aria-hidden="true">🥧</div>
                 <div>
@@ -761,9 +771,9 @@ bool(false)</span></pre>
       </section>
 
       <section id="release" class="py-32" aria-labelledby="release-heading">
-        <div class="mx-auto max-w-[1280px] px-14">
-          <div class="flex items-end justify-between gap-6">
-            <h2 id="release-heading" class="max-w-[24ch] text-6xl font-medium tracking-[-0.045em] text-balance">Still moving.<br>Always improving.</h2>
+        <div class="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-14">
+          <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
+            <h2 id="release-heading" class="max-w-[24ch] text-5xl font-medium tracking-[-0.045em] text-balance sm:text-6xl">Still moving.<br>Always improving.</h2>
             <p class="pb-3 text-[1.0625rem]/7 text-pretty text-muted">
               More to <span class="relative whitespace-nowrap text-ink">build with.<svg
                   viewBox="0 0 220 14"
@@ -778,17 +788,17 @@ bool(false)</span></pre>
             </p>
           </div>
           <div class="relative mt-16">
-            <div class="grid grid-cols-[5fr_7fr] gap-0 overflow-hidden rounded-3xl border border-line bg-surface">
-              <div class="relative flex flex-col justify-between overflow-hidden border-r border-line bg-lavender p-12">
+            <div class="grid grid-cols-1 gap-0 overflow-hidden rounded-3xl border border-line bg-surface lg:grid-cols-[5fr_7fr]">
+              <div class="relative flex flex-col justify-between overflow-hidden border-b border-line bg-lavender p-8 sm:p-12 lg:border-r lg:border-b-0">
                 <div class="draft-grid absolute inset-0" aria-hidden="true"></div><div class="pointer-events-none absolute -right-20 bottom-5 size-100 rounded-full border border-brand/15" aria-hidden="true"></div><div class="pointer-events-none absolute -right-11 bottom-14 size-82 rounded-full border border-brand/15" aria-hidden="true"></div>
                 <div class="relative flex justify-start"><svg viewBox="0 -1 100 50" class="h-7 w-14 fill-brand dark:fill-ink" aria-hidden="true"><use href="#share-php-mark"/></svg></div>
-                <div class="relative -ml-16 my-8 text-[20rem]/[0.82] font-bold tracking-[-0.1em] text-brand tabular-nums dark:text-ink">
+                <div class="relative my-8 ml-0 text-[9rem]/[0.82] font-bold tracking-[-0.1em] text-brand tabular-nums sm:text-[14rem] lg:-ml-16 lg:text-[20rem]/[0.82] dark:text-ink">
                   <p class="release-outline pointer-events-none absolute top-3 left-4" aria-hidden="true">8.5</p>
                   <p class="relative">8.5<span class="absolute top-1 right-4 font-mono text-4xl font-normal text-draft" aria-hidden="true">+</span></p>
                 </div>
                 <p class="relative font-mono text-xs text-muted">Released November 20, 2025</p>
               </div>
-              <div class="p-14"><h3 class="text-4xl font-medium tracking-tight">Meet PHP 8.5.</h3><!-- Feature text and icons from https://www.php.net/releases/8.5/en.php -->
+              <div class="p-8 sm:p-12 lg:p-14"><h3 class="text-4xl font-medium tracking-tight">Meet PHP 8.5.</h3><!-- Feature text and icons from https://www.php.net/releases/8.5/en.php -->
               <dl class="mt-8">
                 <div class="border-b border-line pb-6">
                   <dt class="flex items-center gap-4 text-lg font-medium"><svg class="size-6 shrink-0 fill-none stroke-brand" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5"
@@ -812,16 +822,16 @@ bool(false)</span></pre>
       </section>
 
       <section id="community" class="circuit-texture border-y border-line bg-lavender/70 py-32" aria-labelledby="community-heading">
-        <div class="mx-auto max-w-[1280px] px-14">
-          <div class="grid grid-cols-2 gap-6">
-            <div class="flex flex-col items-start justify-center pr-12">
-              <h2 id="community-heading" class="max-w-[24ch] text-6xl font-medium tracking-[-0.045em]">Built by people.<br>Open by design.</h2>
+        <div class="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-14">
+          <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-6">
+            <div class="flex flex-col items-start justify-center lg:pr-12">
+              <h2 id="community-heading" class="max-w-[24ch] text-5xl font-medium tracking-[-0.045em] sm:text-6xl">Built by people.<br>Open by design.</h2>
               <p class="mt-8 max-w-[39ch] text-lg/8 text-pretty text-muted">PHP has been community-owned for 30 years. The language evolves through public proposals, discussion, and votes, and is <strong class="font-semibold">free from corporate control.</strong></p>
               <p class="mt-5 max-w-[39ch] text-lg/8 text-pretty text-muted">Contribute to the language, improve the docs, or help someone find their feet. There’s a place for you here.</p>
               <div class="mt-9 flex flex-wrap items-center gap-7 text-sm font-medium"><a href="https://www.php.net/get-involved.php" class="inline-flex items-center justify-center gap-5 rounded-xl px-6 py-4 font-medium bg-brand text-white shadow-[inset_0_1px_0_#ffffff30] hover:bg-brand-strong dark:text-paper dark:shadow-none">Get involved<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true"><use href="#share-arrow-right"/></svg></a><a href="https://wiki.php.net/rfc" class="inline-flex items-center gap-3 hover:text-brand">Explore the RFCs<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true"><use href="#share-arrow-up-right"/></svg></a></div>
             </div>
             <div class="relative flex flex-col rounded-3xl border border-line bg-surface">
-              <div class="flex-1 px-12 pt-36 pb-9">
+              <div class="flex-1 px-8 pt-36 pb-9 sm:px-12">
                 <svg viewBox="0 0 500 500" class="absolute -top-4 left-12 size-32 rounded-2xl shadow-[0_2px_3px_-1px_rgb(49_35_74/8%),0_14px_18px_-8px_rgb(49_35_74/20%),0_28px_28px_-16px_rgb(49_35_74/18%)] dark:shadow-none" role="img" aria-label="The PHP Foundation">
                   <use href="#share-php-foundation"/>
                 </svg>
@@ -830,7 +840,7 @@ bool(false)</span></pre>
                 <p class="mt-5 max-w-[41ch] text-lg/8 text-pretty text-muted">Your support funds work on PHP’s core, helping maintain and improve the language that so much of the web depends on.</p>
               </div>
 
-              <div class="flex flex-wrap items-center gap-6 rounded-b-3xl border-t border-brand/20 bg-[#e2d8f7] px-12 py-7 text-sm font-medium dark:bg-[#342a47]">
+              <div class="flex flex-wrap items-center gap-6 rounded-b-3xl border-t border-brand/20 bg-[#e2d8f7] px-8 py-7 text-sm font-medium sm:px-12 dark:bg-[#342a47]">
                 <a href="https://thephp.foundation/sponsor/" class="inline-flex items-center justify-center gap-5 rounded-xl border border-brand/20 bg-lavender px-6 py-4 font-medium text-brand hover:bg-brand/15">
                   Donate to PHP
                   <svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true">
@@ -850,9 +860,9 @@ bool(false)</span></pre>
       </section>
 
       <section id="start" class="relative overflow-hidden py-32" aria-labelledby="start-heading">
-        <div class="mx-auto max-w-[1280px] px-14">
-          <div class="flex items-end justify-between gap-6"><div><h2 id="start-heading" class="text-6xl font-medium tracking-[-0.045em]">Get started.</h2><p class="mt-6 max-w-[52ch] text-lg/8 text-pretty text-muted">Get PHP running, find your feet in the language, and explore a world of packages ready to help.</p></div><div class="pb-1 text-sm font-medium"><a href="https://www.php.net/manual/en/getting-started.php" class="inline-flex items-center justify-center gap-5 rounded-xl px-6 py-4 font-medium bg-brand text-white shadow-[inset_0_1px_0_#ffffff30] hover:bg-brand-strong dark:text-paper dark:shadow-none">Get started with PHP<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true"><use href="#share-arrow-right"/></svg></a></div></div>
-          <ol role="list" class="mt-16 grid grid-cols-3 gap-6">
+        <div class="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-14">
+          <div class="flex flex-col items-start gap-6 sm:flex-row sm:items-end sm:justify-between"><div><h2 id="start-heading" class="text-5xl font-medium tracking-[-0.045em] sm:text-6xl">Get started.</h2><p class="mt-6 max-w-[52ch] text-lg/8 text-pretty text-muted">Get PHP running, find your feet in the language, and explore a world of packages ready to help.</p></div><div class="shrink-0 pb-1 text-sm font-medium"><a href="https://www.php.net/manual/en/getting-started.php" class="inline-flex items-center justify-center gap-5 rounded-xl px-6 py-4 font-medium bg-brand text-white shadow-[inset_0_1px_0_#ffffff30] hover:bg-brand-strong dark:text-paper dark:shadow-none">Get started with PHP<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true"><use href="#share-arrow-right"/></svg></a></div></div>
+          <ol role="list" class="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <li class="flex flex-col rounded-3xl border border-line bg-surface p-8">
               <h3 class="text-3xl font-medium tracking-tight text-balance">Get set up.</h3>
               <p class="mt-3 text-base/7 text-pretty text-muted">Install PHP locally or configure it for your servers. Find the setup that fits your tools and infrastructure.</p>
