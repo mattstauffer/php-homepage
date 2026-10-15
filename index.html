@@ -35,6 +35,12 @@
       --color-mint: var(--mint);
     }
   </style>
+  <script>
+  window.addEventListener('load', () => {
+    // wait one tick so the browser finishes restoring scroll position first
+    setTimeout(() => document.documentElement.classList.add('motion-safe:scroll-smooth'), 0);
+  });
+</script>
 </head>
 <body class="bg-paper font-sans text-ink">
   <svg xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><style>
@@ -924,7 +930,7 @@ bool(false)</span></pre>
           <h2 id="history-heading" class="text-4xl font-medium tracking-tight text-balance sm:text-5xl">PHP through the years.</h2>
           <p class="mt-4 flex items-center gap-2.5 text-sm text-muted sm:text-base">
             <svg viewBox="0 0 24 24" class="size-5 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5M4 12h16"/></svg>
-            <span>Three decades of releases — drag, scroll, or use your arrow keys to explore. Open any version for its notes.</span>
+            <span>Three decades of releases. Drag, scroll, or use your arrow keys to explore. Open any version for its notes, or <a href="/manual/en/history.php.php" class="underline">read the story</a>.</span>
           </p>
         </div>
         <div class="release-history-footer-base pointer-events-none absolute inset-x-0 bottom-0 h-6 border-t border-black/5 bg-white dark:border-white/3" aria-hidden="true"></div>
