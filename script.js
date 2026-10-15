@@ -158,6 +158,28 @@
       });
     }
 
+    const releasesToggle = document.querySelector('[data-releases-toggle]');
+    const releasesPanel = document.querySelector('[data-releases-panel]');
+
+    if (releasesToggle && releasesPanel) {
+      function setReleases(open) {
+        releasesToggle.setAttribute('aria-expanded', String(open));
+        releasesPanel.hidden = !open;
+        releasesPanel.classList.toggle('releases-panel-enter', open);
+      }
+
+      releasesToggle.addEventListener('click', () => {
+        setReleases(releasesToggle.getAttribute('aria-expanded') !== 'true');
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && releasesToggle.getAttribute('aria-expanded') === 'true') {
+          setReleases(false);
+          releasesToggle.focus();
+        }
+      });
+    }
+
     const showcase = document.querySelector('[data-code-showcase]');
 
     if (!showcase) {

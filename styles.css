@@ -112,6 +112,15 @@ button { cursor: pointer; }
 .draft-enter { animation: draft-arrive 1.4s ease-out both; }
 .draft-stroke { stroke-dasharray: 1200; animation: draft-draw 1.8s ease-out both; }
 
+/* Latest releases drawer: chevron flips with the toggle, panel fades in on open. */
+[data-releases-toggle][aria-expanded="true"] [data-releases-chevron] { transform: rotate(180deg); }
+.releases-panel-enter { animation: releases-reveal .22s ease-out both; }
+
+@keyframes releases-reveal {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes draft-arrive {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
@@ -124,7 +133,7 @@ button { cursor: pointer; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .draft-enter, .draft-stroke { animation: none; }
+  .draft-enter, .draft-stroke, .releases-panel-enter { animation: none; }
 }
 
 /* Shared drafting details create a continuous sheet around the large content panels. */

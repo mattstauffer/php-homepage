@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=14">
-  <script src="./script.js?v=10"></script>
+  <link rel="stylesheet" href="./styles.css?v=17">
+  <script src="./script.js?v=11"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
     @custom-variant dark (&:where(.dark, .dark *));
@@ -82,6 +82,9 @@
   </symbol>
   <symbol id="share-arrow-up-right" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z" clip-rule="evenodd" />
+  </symbol>
+  <symbol id="share-chevron-down" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M3.47 5.97a.75.75 0 0 1 1.06 0L8 9.44l3.47-3.47a.75.75 0 1 1 1.06 1.06l-4 4a.75.75 0 0 1-1.06 0l-4-4a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
   </symbol>
   <symbol id="share-asana" viewBox="0 0 24 24"><g fill="currentColor">
     <circle cx="12" cy="6.25" r="4.25" />
@@ -247,7 +250,25 @@
         <div class="relative mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-14">
           <h1 id="hero-heading" class="relative z-10 max-w-[760px] text-5xl sm:text-8xl lg:text-hero font-semibold tracking-[-0.065em]">The web runs<br>on <span class="text-brand dark:text-ink">PHP.</span></h1>
           <p class="relative z-10 mt-6 max-w-[610px] text-base/6 text-pretty text-ink/70 sm:mt-7 sm:text-lg/8 sm:text-muted">Build websites, APIs, and applications with a modern, open source language, mature tools, and a global community. It's a scripting language too, just as strong  on the command line as on the web.</p>
-          <div class="relative z-10 mt-8 flex flex-col items-stretch gap-4 text-sm font-medium sm:flex-row sm:items-center sm:gap-8"><a href="#start" class="inline-flex items-center justify-center gap-5 rounded-xl px-6 py-4 font-medium bg-brand text-white shadow-[inset_0_1px_0_#ffffff30] hover:bg-brand-strong dark:text-paper dark:shadow-none">Get started<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true"><use href="#share-arrow-right"/></svg></a><a href="https://www.php.net/downloads.php" class="inline-flex items-center justify-center gap-3 hover:text-brand">Download PHP<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true"><use href="#share-arrow-up-right"/></svg></a></div>
+          <div class="relative z-10 mt-8 flex flex-col items-stretch gap-4 text-sm font-medium sm:flex-row sm:items-center sm:gap-8"><a href="#start" class="inline-flex items-center justify-center gap-5 rounded-xl px-6 py-4 font-medium bg-brand text-white shadow-[inset_0_1px_0_#ffffff30] hover:bg-brand-strong dark:text-paper dark:shadow-none">Get started<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true"><use href="#share-arrow-right"/></svg></a><a href="https://www.php.net/downloads.php" class="inline-flex items-center justify-center gap-3 hover:text-brand">Download PHP<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current" aria-hidden="true"><use href="#share-arrow-up-right"/></svg></a><button type="button" data-releases-toggle aria-expanded="false" aria-controls="latest-releases" class="inline-flex items-center justify-center gap-2 hover:text-brand">Latest releases<svg viewBox="0 0 16 16" class="size-4 shrink-0 fill-current transition-transform duration-200" data-releases-chevron aria-hidden="true"><use href="#share-chevron-down"/></svg></button></div>
+          <div id="latest-releases" data-releases-panel hidden class="relative z-10 mt-6">
+            <div class="rounded-2xl border border-line bg-surface/70 px-5 py-4 shadow-sm backdrop-blur-sm sm:px-6">
+              <ul role="list" class="grid grid-cols-1 gap-x-6 gap-y-3 text-sm sm:grid-cols-3">
+                <li class="flex items-center gap-2">
+                  <a href="https://www.php.net/downloads.php?version=8.5" class="font-mono text-[0.9375rem] font-semibold tracking-tight hover:text-brand">8.5.11</a>
+                  <span aria-hidden="true" class="text-muted/40">·</span><a href="https://www.php.net/ChangeLog-8.php#8.5.11" class="text-muted hover:text-brand">Changelog</a><span aria-hidden="true" class="text-muted/40">·</span><a href="https://www.php.net/migration85" class="text-muted hover:text-brand">Upgrading</a>
+                </li>
+                <li class="flex items-center gap-2 sm:border-l sm:border-line sm:pl-6">
+                  <a href="https://www.php.net/downloads.php?version=8.4" class="font-mono text-[0.9375rem] font-semibold tracking-tight hover:text-brand">8.4.26</a>
+                  <span aria-hidden="true" class="text-muted/40">·</span><a href="https://www.php.net/ChangeLog-8.php#8.4.26" class="text-muted hover:text-brand">Changelog</a><span aria-hidden="true" class="text-muted/40">·</span><a href="https://www.php.net/migration84" class="text-muted hover:text-brand">Upgrading</a>
+                </li>
+                <li class="flex items-center gap-2 sm:border-l sm:border-line sm:pl-6">
+                  <a href="https://www.php.net/downloads.php?version=8.3" class="font-mono text-[0.9375rem] font-semibold tracking-tight hover:text-brand">8.3.35</a>
+                  <span aria-hidden="true" class="text-muted/40">·</span><a href="https://www.php.net/ChangeLog-8.php#8.3.35" class="text-muted hover:text-brand">Changelog</a><span aria-hidden="true" class="text-muted/40">·</span><a href="https://www.php.net/migration83" class="text-muted hover:text-brand">Upgrading</a>
+                </li>
+              </ul>
+            </div>
+          </div>
           <div class="draft-enter pointer-events-none absolute -top-16 right-0 h-40 w-48 lg:top-9 lg:right-9 lg:h-88 lg:w-[430px]" aria-hidden="true">
             <svg viewBox="0 0 360 300" class="size-full fill-none stroke-draft opacity-20 md:opacity-50 lg:opacity-100"><use href="#share-hero-php-globe"/></svg>
           </div>
