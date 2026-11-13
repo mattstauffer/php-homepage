@@ -394,6 +394,30 @@
                   <button
                     type="button"
                     role="tab"
+                    id="example-tab-cli"
+                    aria-controls="example-cli"
+                    aria-selected="false"
+                    tabindex="-1"
+                    class="group relative flex h-10 items-center gap-2.5 px-5 text-left font-mono text-xs text-muted hover:bg-brand/5 aria-selected:bg-brand/10 aria-selected:text-ink focus-visible:outline-offset-[-3px]"
+                  >
+                    <span class="absolute inset-y-0 left-0 w-0.5 bg-brand opacity-0 group-aria-selected:opacity-100" aria-hidden="true"></span>
+                    <span>GreetCommand.php</span>
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    id="example-tab-api"
+                    aria-controls="example-api"
+                    aria-selected="false"
+                    tabindex="-1"
+                    class="group relative flex h-10 items-center gap-2.5 px-5 text-left font-mono text-xs text-muted hover:bg-brand/5 aria-selected:bg-brand/10 aria-selected:text-ink focus-visible:outline-offset-[-3px]"
+                  >
+                    <span class="absolute inset-y-0 left-0 w-0.5 bg-brand opacity-0 group-aria-selected:opacity-100" aria-hidden="true"></span>
+                    <span>release_date.php</span>
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
                     id="example-tab-streams"
                     aria-controls="example-streams"
                     aria-selected="false"
@@ -414,18 +438,6 @@
                   >
                     <span class="absolute inset-y-0 left-0 w-0.5 bg-brand opacity-0 group-aria-selected:opacity-100" aria-hidden="true"></span>
                     <span>extract_headlines.php</span>
-                  </button>
-                  <button
-                    type="button"
-                    role="tab"
-                    id="example-tab-signatures"
-                    aria-controls="example-signatures"
-                    aria-selected="false"
-                    tabindex="-1"
-                    class="group relative flex h-10 items-center gap-2.5 px-5 text-left font-mono text-xs text-muted hover:bg-brand/5 aria-selected:bg-brand/10 aria-selected:text-ink focus-visible:outline-offset-[-3px]"
-                  >
-                    <span class="absolute inset-y-0 left-0 w-0.5 bg-brand opacity-0 group-aria-selected:opacity-100" aria-hidden="true"></span>
-                    <span>sign_and_verify.php</span>
                   </button>
                 </div>
               </div>
@@ -531,7 +543,7 @@ order.shipped</span></pre>
                         </svg>
                       </button>
                     </div>
-                    <p class="border-b border-line px-4 py-3 text-xs/5 text-muted sm:px-6 sm:text-sm/6">Query real HTML with CSS selectors — the DOM parser is built in, no packages.</p>
+                    <p class="border-b border-line px-4 py-3 text-xs/5 text-muted sm:px-6 sm:text-sm/6">Fetch a live page and query it with CSS selectors, using the built-in DOM parser.</p>
                     <div class="flex gap-4 overflow-x-auto px-4 py-4 font-mono text-[0.7rem]/5 sm:gap-5 sm:px-6 sm:py-5 sm:text-sm/6">
                       <pre aria-hidden="true" class="shrink-0 select-none border-r border-line pr-5 text-right text-(--code-gutter)">1
 2
@@ -546,27 +558,21 @@ order.shipped</span></pre>
 11
 12
 13
-14
-15
-16
-17</pre>
+14</pre>
                       <pre class="min-w-0"><code data-example-code><span class="text-(--code-comment)">&lt;?php</span>
-<span class="text-(--code-comment) italic">// Extract headlines from HTML with CSS selectors.</span>
+<span class="text-(--code-comment) italic">// Fetch a live page and extract its headlines with CSS selectors.</span>
 
-<span class="text-(--code-text)">$html</span> = &lt;&lt;&lt;<span class="text-(--code-string)">&#x27;HTML&#x27;</span>
-    &lt;!doctype html&gt;
-    &lt;article&gt;&lt;h2&gt;Streaming data&lt;/h2&gt;&lt;/article&gt;
-    &lt;article&gt;&lt;h2&gt;Building APIs&lt;/h2&gt;&lt;/article&gt;
-    HTML;
+<span class="text-(--code-text)">$html</span> = <span class="text-(--code-function)">file_get_contents</span>(<span class="text-(--code-string)">&#x27;https://www.php.net/archive/2026.php&#x27;</span>);
 
-<span class="text-(--code-text)">$page</span> = Dom\HTMLDocument::<span class="text-(--code-function)">createFromString</span>(<span class="text-(--code-text)">$html</span>);
+<span class="text-(--code-text)">$page</span> = Dom\HTMLDocument::<span class="text-(--code-function)">createFromString</span>(<span class="text-(--code-text)">$html</span>, <span class="text-(--code-type)">LIBXML_NOERROR</span>);
 <span class="text-(--code-text)">$headlines</span> = [];
 
 <span class="text-(--code-keyword)">foreach</span> (<span class="text-(--code-text)">$page</span>-&gt;<span class="text-(--code-function)">querySelectorAll</span>(<span class="text-(--code-string)">&#x27;article h2&#x27;</span>) <span class="text-(--code-keyword)">as</span> <span class="text-(--code-text)">$heading</span>) {
-    <span class="text-(--code-text)">$headlines</span>[] = <span class="text-(--code-text)">$heading</span>-&gt;textContent;
+    <span class="text-(--code-text)">$headlines</span>[] = <span class="text-(--code-function)">trim</span>(<span class="text-(--code-text)">$heading</span>-&gt;textContent);
 }
 
-<span class="text-(--code-keyword)">echo</span> <span class="text-(--code-function)">json_encode</span>(<span class="text-(--code-text)">$headlines</span>, <span class="text-(--code-type)">JSON_PRETTY_PRINT</span>);</code></pre>
+<span class="text-(--code-comment) italic">// The archive is newest-first, so the year&#x27;s first posts are at the end.</span>
+<span class="text-(--code-keyword)">echo</span> <span class="text-(--code-function)">json_encode</span>(<span class="text-(--code-function)">array_slice</span>(<span class="text-(--code-function)">array_reverse</span>(<span class="text-(--code-text)">$headlines</span>), 0, 3), <span class="text-(--code-type)">JSON_PRETTY_PRINT</span>);</code></pre>
                     </div>
                     <div role="region" aria-label="Example terminal session" class="border-t border-line bg-(--editor-sidebar)">
                       <div class="flex h-9 items-center justify-between border-b border-line px-6 font-mono text-xs">
@@ -575,16 +581,17 @@ order.shipped</span></pre>
                       </div>
                       <pre class="min-h-31 overflow-x-auto px-4 py-3 font-mono text-[0.7rem]/5 text-(--code-text) sm:px-6 sm:text-sm/5"><span class="select-none text-brand" aria-hidden="true">$ </span><span class="text-(--code-function)">php</span> extract_headlines.php
 <span class="text-(--code-comment)">[
-    &quot;Streaming data&quot;,
-    &quot;Building APIs&quot;
+    &quot;PHP Velho Oeste 2026&quot;,
+    &quot;PHP 8.4.17 Released!&quot;,
+    &quot;PHP 8.3.30 Released!&quot;
 ]</span></pre>
                     </div>
                   </div>
                 </div>
                 <div
-                  id="example-signatures"
+                  id="example-cli"
                   role="tabpanel"
-                  aria-labelledby="example-tab-signatures"
+                  aria-labelledby="example-tab-cli"
                   tabindex="0"
                   class="focus-visible:outline-offset-[-3px]"
                   hidden
@@ -592,13 +599,13 @@ order.shipped</span></pre>
                   <div class="bg-(--editor-canvas) text-(--code-text)">
                     <div class="flex h-12 items-center justify-between border-b border-line bg-(--editor-sidebar) pr-5">
                       <div class="flex h-full items-center gap-3 border-t-2 border-r border-t-brand border-r-line bg-(--editor-canvas) px-6 font-mono text-xs">
-                        <span>sign_and_verify.php</span>
+                        <span>GreetCommand.php</span>
                       </div>
                       <button
                         type="button"
                         data-copy-example
                         class="relative flex size-8 items-center justify-center rounded-md text-muted hover:bg-brand/10 hover:text-ink focus-visible:outline-brand"
-                        aria-label="Copy sign_and_verify.php"
+                        aria-label="Copy GreetCommand.php"
                         title="Copy code"
                       >
                         <span class="absolute top-1/2 left-1/2 size-[max(100%,3rem)] -translate-1/2 pointer-fine:hidden" aria-hidden="true"></span>
@@ -607,7 +614,7 @@ order.shipped</span></pre>
                         </svg>
                       </button>
                     </div>
-                    <p class="border-b border-line px-4 py-3 text-xs/5 text-muted sm:px-6 sm:text-sm/6">Modern cryptography is bundled in: sign a message, then catch any tampering.</p>
+                    <p class="border-b border-line px-4 py-3 text-xs/5 text-muted sm:px-6 sm:text-sm/6">Attributes describe arguments and options; the method signature <em>is</em> the command.</p>
                     <div class="flex gap-4 overflow-x-auto px-4 py-4 font-mono text-[0.7rem]/5 sm:gap-5 sm:px-6 sm:py-5 sm:text-sm/6">
                       <pre aria-hidden="true" class="shrink-0 select-none border-r border-line pr-5 text-right text-(--code-gutter)">1
 2
@@ -625,33 +632,111 @@ order.shipped</span></pre>
 14
 15
 16
-17</pre>
+17
+18</pre>
                       <pre class="min-w-0"><code data-example-code><span class="text-(--code-comment)">&lt;?php</span>
-<span class="text-(--code-comment) italic">// Sign a message, then detect whether it has changed.</span>
+<span class="text-(--code-comment) italic">// Turn a plain method into a command-line tool.</span>
 
-<span class="text-(--code-text)">$keys</span> = <span class="text-(--code-function)">sodium_crypto_sign_keypair</span>();
-<span class="text-(--code-text)">$secret</span> = <span class="text-(--code-function)">sodium_crypto_sign_secretkey</span>(<span class="text-(--code-text)">$keys</span>);
-<span class="text-(--code-text)">$public</span> = <span class="text-(--code-function)">sodium_crypto_sign_publickey</span>(<span class="text-(--code-text)">$keys</span>);
-<span class="text-(--code-text)">$message</span> = <span class="text-(--code-string)">&#x27;Release approved.&#x27;</span>;
+#[<span class="text-(--code-function)">AsCommand</span>(<span class="text-(--code-string)">&#x27;greet&#x27;</span>, <span class="text-(--code-string)">&#x27;Say hello to someone&#x27;</span>)]
+<span class="text-(--code-keyword)">class</span> <span class="text-(--code-type)">GreetCommand</span>
+{
+    <span class="text-(--code-keyword)">public function</span> <span class="text-(--code-function)">__invoke</span>(
+        <span class="text-(--code-type)">OutputInterface</span> <span class="text-(--code-text)">$output</span>,
+        #[<span class="text-(--code-function)">Argument</span>] string <span class="text-(--code-text)">$name</span>,
+        #[<span class="text-(--code-function)">Option</span>] bool <span class="text-(--code-text)">$shout</span> = <span class="text-(--code-keyword)">false</span>,
+    ): int {
+        <span class="text-(--code-text)">$greeting</span> = <span class="text-(--code-string)">&quot;Hello, {$name}!&quot;</span>;
 
-<span class="text-(--code-text)">$signature</span> = <span class="text-(--code-function)">sodium_crypto_sign_detached</span>(<span class="text-(--code-text)">$message</span>, <span class="text-(--code-text)">$secret</span>);
+        <span class="text-(--code-text)">$output</span>-&gt;<span class="text-(--code-function)">writeln</span>(<span class="text-(--code-text)">$shout</span> ? <span class="text-(--code-function)">strtoupper</span>(<span class="text-(--code-text)">$greeting</span>) : <span class="text-(--code-text)">$greeting</span>);
 
-<span class="text-(--code-function)">var_dump</span>(<span class="text-(--code-function)">sodium_crypto_sign_verify_detached</span>(
-    <span class="text-(--code-text)">$signature</span>, <span class="text-(--code-text)">$message</span>, <span class="text-(--code-text)">$public</span>
-));
-
-<span class="text-(--code-function)">var_dump</span>(<span class="text-(--code-function)">sodium_crypto_sign_verify_detached</span>(
-    <span class="text-(--code-text)">$signature</span>, <span class="text-(--code-string)">&#x27;Release changed.&#x27;</span>, <span class="text-(--code-text)">$public</span>
-));</code></pre>
+        <span class="text-(--code-keyword)">return</span> <span class="text-(--code-type)">Command</span>::<span class="text-(--code-type)">SUCCESS</span>;
+    }
+}</code></pre>
                     </div>
                     <div role="region" aria-label="Example terminal session" class="border-t border-line bg-(--editor-sidebar)">
                       <div class="flex h-9 items-center justify-between border-b border-line px-6 font-mono text-xs">
                         <p class="flex h-full items-center border-b border-brand text-(--code-text)">Terminal</p>
                         <p class="text-(--code-comment)">Example session</p>
                       </div>
-                      <pre class="min-h-31 overflow-x-auto px-4 py-3 font-mono text-[0.7rem]/5 text-(--code-text) sm:px-6 sm:text-sm/5"><span class="select-none text-brand" aria-hidden="true">$ </span><span class="text-(--code-function)">php</span> sign_and_verify.php
-<span class="text-(--code-comment)">bool(true)
-bool(false)</span></pre>
+                      <pre class="min-h-31 overflow-x-auto px-4 py-3 font-mono text-[0.7rem]/5 text-(--code-text) sm:px-6 sm:text-sm/5"><span class="select-none text-brand" aria-hidden="true">$ </span><span class="text-(--code-function)">php</span> bin/console greet Ada --shout
+<span class="text-(--code-comment)">HELLO, ADA!</span></pre>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  id="example-api"
+                  role="tabpanel"
+                  aria-labelledby="example-tab-api"
+                  tabindex="0"
+                  class="focus-visible:outline-offset-[-3px]"
+                  hidden
+                >
+                  <div class="bg-(--editor-canvas) text-(--code-text)">
+                    <div class="flex h-12 items-center justify-between border-b border-line bg-(--editor-sidebar) pr-5">
+                      <div class="flex h-full items-center gap-3 border-t-2 border-r border-t-brand border-r-line bg-(--editor-canvas) px-6 font-mono text-xs">
+                        <span>release_date.php</span>
+                      </div>
+                      <button
+                        type="button"
+                        data-copy-example
+                        class="relative flex size-8 items-center justify-center rounded-md text-muted hover:bg-brand/10 hover:text-ink focus-visible:outline-brand"
+                        aria-label="Copy release_date.php"
+                        title="Copy code"
+                      >
+                        <span class="absolute top-1/2 left-1/2 size-[max(100%,3rem)] -translate-1/2 pointer-fine:hidden" aria-hidden="true"></span>
+                        <svg viewBox="0 0 16 16" class="size-4 fill-current" aria-hidden="true">
+                          <use href="#share-document-duplicate"/>
+                        </svg>
+                      </button>
+                    </div>
+                    <p class="border-b border-line px-4 py-3 text-xs/5 text-muted sm:px-6 sm:text-sm/6">Code against PSR standard interfaces, then plug in whichever HTTP client you like.</p>
+                    <div class="flex gap-4 overflow-x-auto px-4 py-4 font-mono text-[0.7rem]/5 sm:gap-5 sm:px-6 sm:py-5 sm:text-sm/6">
+                      <pre aria-hidden="true" class="shrink-0 select-none border-r border-line pr-5 text-right text-(--code-gutter)">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre>
+                      <pre class="min-w-0"><code data-example-code><span class="text-(--code-comment)">&lt;?php</span>
+<span class="text-(--code-comment) italic">// Call a JSON API with an HTTP client.</span>
+
+<span class="text-(--code-keyword)">function</span> <span class="text-(--code-function)">releaseDate</span>(
+    <span class="text-(--code-type)">ClientInterface</span> <span class="text-(--code-text)">$http</span>,
+    <span class="text-(--code-type)">RequestFactoryInterface</span> <span class="text-(--code-text)">$requests</span>,
+    string <span class="text-(--code-text)">$version</span>,
+): string {
+    <span class="text-(--code-text)">$request</span> = <span class="text-(--code-text)">$requests</span>
+        -&gt;<span class="text-(--code-function)">createRequest</span>(<span class="text-(--code-string)">&#x27;GET&#x27;</span>, <span class="text-(--code-string)">&quot;https://www.php.net/releases/?json&amp;version={$version}&quot;</span>)
+        -&gt;<span class="text-(--code-function)">withHeader</span>(<span class="text-(--code-string)">&#x27;Accept&#x27;</span>, <span class="text-(--code-string)">&#x27;application/json&#x27;</span>);
+
+    <span class="text-(--code-text)">$response</span> = <span class="text-(--code-text)">$http</span>-&gt;<span class="text-(--code-function)">sendRequest</span>(<span class="text-(--code-text)">$request</span>);
+    <span class="text-(--code-text)">$release</span> = <span class="text-(--code-function)">json_decode</span>(<span class="text-(--code-text)">$response</span>-&gt;<span class="text-(--code-function)">getBody</span>(), flags: <span class="text-(--code-type)">JSON_THROW_ON_ERROR</span>);
+
+    <span class="text-(--code-keyword)">return</span> <span class="text-(--code-text)">$release</span>-&gt;<span class="text-(--code-text)">date</span>;
+}
+
+<span class="text-(--code-keyword)">echo</span> <span class="text-(--code-function)">releaseDate</span>(<span class="text-(--code-keyword)">new</span> <span class="text-(--code-type)">GuzzleHttp\Client</span>(), <span class="text-(--code-keyword)">new</span> <span class="text-(--code-type)">GuzzleHttp\Psr7\HttpFactory</span>(), <span class="text-(--code-string)">&#x27;8.0.0&#x27;</span>);</code></pre>
+                    </div>
+                    <div role="region" aria-label="Example terminal session" class="border-t border-line bg-(--editor-sidebar)">
+                      <div class="flex h-9 items-center justify-between border-b border-line px-6 font-mono text-xs">
+                        <p class="flex h-full items-center border-b border-brand text-(--code-text)">Terminal</p>
+                        <p class="text-(--code-comment)">Example session</p>
+                      </div>
+                      <pre class="min-h-31 overflow-x-auto px-4 py-3 font-mono text-[0.7rem]/5 text-(--code-text) sm:px-6 sm:text-sm/5"><span class="select-none text-brand" aria-hidden="true">$ </span><span class="text-(--code-function)">php</span> release_date.php
+<span class="text-(--code-comment)">26 Nov 2020</span></pre>
                     </div>
                   </div>
                 </div>
@@ -680,7 +765,7 @@ bool(false)</span></pre>
                         </svg>
                       </button>
                     </div>
-                    <p class="border-b border-line px-4 py-3 text-xs/5 text-muted sm:px-6 sm:text-sm/6">Attributes, typed properties, and constructor injection — a whole JSON endpoint in one class.</p>
+                    <p class="border-b border-line px-4 py-3 text-xs/5 text-muted sm:px-6 sm:text-sm/6">Attributes, typed properties, and constructor injection; a whole JSON endpoint in one class.</p>
                     <div class="flex gap-4 overflow-x-auto px-4 py-4 font-mono text-[0.7rem]/5 sm:gap-5 sm:px-6 sm:py-5 sm:text-sm/6">
                       <pre aria-hidden="true" class="shrink-0 select-none border-r border-line pr-5 text-right text-(--code-gutter)">1
 2
